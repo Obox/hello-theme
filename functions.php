@@ -151,6 +151,8 @@ if ( is_admin() ) {
 	require get_template_directory() . '/includes/admin-functions.php';
 }
 
+require get_template_directory() . '/includes/header-functions.php';
+
 if ( ! function_exists( 'hello_elementor_check_hide_title' ) ) {
 	/**
 	 * Check hide title.
