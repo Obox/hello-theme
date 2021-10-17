@@ -4,6 +4,7 @@ namespace HelloTheme\Includes\MenuSettings;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Typography;
 use Elementor\Core\Kits\Documents\Tabs\Tab_Base;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -122,6 +123,18 @@ class Settings_Header extends Tab_Base {
 					'selectors' => [
 						'.site-header .site-navigation ul.menu li a' => 'color: {{VALUE}};',
 					],
+				]
+			);
+
+			$this->add_group_control(
+				Group_Control_Typography::get_type(),
+				[
+					'name' => 'hello_header_menu_typography',
+					'label' => __( 'Typography', 'hello-elementor' ),
+					'condition' => [
+						'hello_header_menu_display' => 'yes',
+					],
+					'selector' => '.site-header .site-navigation .menu li',
 				]
 			);
 		}
