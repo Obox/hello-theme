@@ -7,6 +7,7 @@ use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Typography;
 use Elementor\Core\Kits\Documents\Tabs\Tab_Base;
 
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
