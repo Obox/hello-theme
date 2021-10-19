@@ -12,12 +12,14 @@ add_action( 'elementor/init', 'hello_elementor_settings_init' );
 
 function hello_elementor_settings_init() {
 	if ( hello_header_footer_experiment_active() ) {
+		require 'settings/settings-menu.php';
 		require 'settings/settings-header.php';
 		require 'settings/settings-footer.php';
 
 		add_action( 'elementor/kit/register_tabs', function( \Elementor\Core\Kits\Documents\Kit $kit ) {
 			$kit->register_tab( 'hello-settings-header', HelloElementor\Includes\Settings\Settings_Header::class );
 			$kit->register_tab( 'hello-settings-footer', HelloElementor\Includes\Settings\Settings_Footer::class );
+			$kit->register_tab( 'hello-settings-footer', HelloElementor\Includes\Settings\Settings_Menu::class );
 		}, 1, 40 );
 	}
 }
@@ -102,7 +104,7 @@ function hello_get_header_layout_class() {
  * @return string
  */
 function hello_get_footer_layout_class() {
-	$footer_layout = hello_elementor_get_setting( 'hello_footer_layout' );
+	  $footer_layout = hello_elementor_get_setting( 'hello_footer_layout' );
 
 	$layout_classes = [];
 
