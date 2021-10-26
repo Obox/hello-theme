@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Settings_Menu extends Tab_Base {
 
-	 public function get_id() {
+	public function get_id() {
 		return 'hello-settings-header';
 	}
 
