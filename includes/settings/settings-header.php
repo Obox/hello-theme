@@ -474,7 +474,7 @@ class Settings_Header extends Tab_Base {
 						'condition' => [
 							'hello_header_menu_display' => 'yes',
 						],
-						'selector' => '.site-header .site-navigation .menu li',
+						'selector' => '.site-header .site-navigation ul.menu menu-item-has-children',
 					]
 				);
 				$this->add_group_control(
@@ -483,7 +483,7 @@ class Settings_Header extends Tab_Base {
 						'name' => 'hello_header_menu_background',
 						'label' => __( 'Background', 'hello-elementor' ),
 						'types' => [ 'classic', 'gradient', 'video' ],
-						'selector' => '.site-header .site-navigation .menu li',
+						'selector' => '.site-header .site-navigation ul.menu menu-item-has-children',
 					]
 				);
 		}
