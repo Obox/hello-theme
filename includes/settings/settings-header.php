@@ -488,6 +488,21 @@ class Settings_Header extends Tab_Base {
 			);
 
 			$this->add_control(
+				'hello_header_menu_submenu_width',
+				[
+					'label' => __( 'Width', 'hello-elementor' ),
+					'type' => Controls_Manager::SELECT,
+					'default' => 'medium',
+					'options' => [
+						'thin' => __( 'Thin', 'hello-elementor' ),
+						'medium' => __( 'Medium', 'hello-elementor' ),
+						'wide' => __( 'Wide', 'hello-elementor' ),
+					],
+					'frontend_available' => true,
+				]
+			);
+
+			$this->add_control(
 				'hello_header_menu_submenu_color',
 				[
 					'label' => __( 'Color', 'hello-elementor' ),

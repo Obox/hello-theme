@@ -238,6 +238,27 @@ footer {
 			display: none !important;
 		}
 	}
+
+	.site-header.menu-submenu-width-thin .site-navigation {
+
+		ul.menu li ul {
+			width: 150px;
+		}
+	}
+
+	.site-header.menu-submenu-width-medium .site-navigation {
+
+		ul.menu li ul {
+			width: 200px;
+		}
+	}
+
+	.site-header.menu-submenu-width-wide .site-navigation {
+
+		ul.menu li ul {
+			width: 250px;
+		}
+	}
 }
 
 @media (min-width: $screen-xs) and (max-width: 767px) {

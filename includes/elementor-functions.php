@@ -93,6 +93,15 @@ function hello_get_header_layout_class() {
 		$layout_classes[] = 'menu-layout-dropdown';
 	}
 
+	$hello_header_menu_submenu_width = hello_elementor_get_setting( 'hello_header_menu_submenu_width' );
+	if ( 'thin' === $hello_header_menu_submenu_width ) {
+		$layout_classes[] = 'menu-submenu-width-thin';
+	} elseif ( 'medium' === $hello_header_menu_submenu_width ) {
+		$layout_classes[] = 'menu-submenu-width-medium';
+	} elseif ( 'wide' === $hello_header_menu_submenu_width ) {
+		$layout_classes[] = 'menu-submenu-width-wide';
+	}
+
 	return implode( ' ', $layout_classes );
 }
 
