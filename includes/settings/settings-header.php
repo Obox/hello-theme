@@ -477,6 +477,41 @@ class Settings_Header extends Tab_Base {
 					'selector' => '.site-header .site-navigation .menu li',
 				]
 			);
+
+			$this->add_control(
+				'hello_header_menu_submenu_ui_heading',
+				[
+					'label' => __( 'Sub-Menus', 'hello-elementor' ),
+					'type' => Controls_Manager::HEADING,
+					'separator' => 'before',
+				]
+			);
+
+			$this->add_control(
+				'hello_header_menu_submenu_color',
+				[
+					'label' => __( 'Color', 'hello-elementor' ),
+					'type' => Controls_Manager::COLOR,
+					'condition' => [
+						'hello_header_menu_display' => 'yes',
+					],
+					'selectors' => [
+						'.site-header .site-navigation ul.menu li ul.sub-menu li a' => 'color: {{VALUE}};',
+					],
+				]
+			);
+
+			$this->add_group_control(
+				Group_Control_Typography::get_type(),
+				[
+					'name' => 'hello_header_menu_submenu_typography',
+					'label' => __( 'Typography', 'hello-elementor' ),
+					'condition' => [
+						'hello_header_menu_display' => 'yes',
+					],
+					'selector' => '.site-header .site-navigation ul.menu li ul.sub-menu li',
+				]
+			);
 		}
 
 		$this->end_controls_section();
