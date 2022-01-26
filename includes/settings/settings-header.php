@@ -477,6 +477,67 @@ class Settings_Header extends Tab_Base {
 					'selector' => '.site-header .site-navigation .menu li',
 				]
 			);
+
+			$this->add_control(
+				'hello_header_menu_submenu_ui_heading',
+				[
+					'label' => __( 'Sub-Menus', 'hello-elementor' ),
+					'type' => Controls_Manager::HEADING,
+					'separator' => 'before',
+				]
+			);
+
+			$this->add_control(
+				'hello_header_menu_submenu_width',
+				[
+					'label' => __( 'Width', 'hello-elementor' ),
+					'type' => Controls_Manager::SELECT,
+					'default' => 'medium',
+					'options' => [
+						'thin' => __( 'Thin', 'hello-elementor' ),
+						'medium' => __( 'Medium', 'hello-elementor' ),
+						'wide' => __( 'Wide', 'hello-elementor' ),
+					],
+					'frontend_available' => true,
+				]
+			);
+
+			$this->add_control(
+				'hello_header_menu_submenu_color',
+				[
+					'label' => __( 'Color', 'hello-elementor' ),
+					'type' => Controls_Manager::COLOR,
+					'condition' => [
+						'hello_header_menu_display' => 'yes',
+					],
+					'selectors' => [
+						'.site-header .site-navigation ul.menu li ul.sub-menu li a' => 'color: {{VALUE}};',
+					],
+				]
+			);
+
+			$this->add_group_control(
+				Group_Control_Typography::get_type(),
+				[
+					'name' => 'hello_header_menu_submenu_typography',
+					'label' => __( 'Typography', 'hello-elementor' ),
+					'condition' => [
+						'hello_header_menu_display' => 'yes',
+					],
+					'selector' => '.site-header .site-navigation ul.menu li ul.sub-menu li',
+				]
+			);
+
+			$this->add_group_control(
+				Group_Control_Background::get_type(),
+				[
+					'name' => 'hello_header_menu_submenu_background',
+					'label' => __( 'Background', 'hello-elementor' ),
+					'types' => [ 'classic', 'gradient' ],
+					'exclude' => [ 'image' ],
+					'selector' => '.site-header .site-navigation ul.menu li ul.sub-menu',
+				]
+			);
 		}
 
 		$this->end_controls_section();

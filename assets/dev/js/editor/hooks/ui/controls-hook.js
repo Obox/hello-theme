@@ -95,6 +95,16 @@ export default class ControlsHook extends $e.modules.hookUI.After {
 					this.toggleLayoutClass( $element, classPrefix, inputOptions, inputValue );
 				},
 			},
+			hello_header_menu_submenu_width: {
+				selector: '.site-header',
+				callback: ( $element, args ) => {
+					const classPrefix = 'menu-submenu-width-',
+						inputOptions = args.container.controls.hello_header_menu_submenu_width.options,
+						inputValue = args.settings.hello_header_menu_submenu_width;
+
+					this.toggleLayoutClass( $element, classPrefix, inputOptions, inputValue );
+				},
+			},
 			hello_footer_logo_display: {
 				selector: '.site-footer .site-logo, .site-footer .site-title',
 				callback: ( $element, args ) => {
