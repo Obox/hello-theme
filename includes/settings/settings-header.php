@@ -527,6 +527,17 @@ class Settings_Header extends Tab_Base {
 					'selector' => '.site-header .site-navigation ul.menu li ul.sub-menu li',
 				]
 			);
+
+			$this->add_group_control(
+				Group_Control_Background::get_type(),
+				[
+					'name' => 'hello_header_menu_submenu_background',
+					'label' => __( 'Background', 'hello-elementor' ),
+					'types' => [ 'classic', 'gradient' ],
+					'exclude' => [ 'image' ],
+					'selector' => '.site-header .site-navigation ul.menu li ul.sub-menu',
+				]
+			);
 		}
 
 		$this->end_controls_section();
